@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SmartQuiz App</title>
+<link rel="icon" href="https://tse3.mm.bing.net/th/id/OIP.oDjY5-b-l3A8p67gaT6ZaQHaHa?pid=Api&P=0&h=180">
+<link rel="stylesheet" href="SmartQuiz.css">
+<script src="SmartQuiz.js"></script>
+</head>
+<body>
+<header>🎯 SmartQuiz App</header>
+<div class="container">
+  <div class="sidebar">
+    <h3>Settings</h3>
+    <label>Domain</label>
+    <select id="domain">
+      <option value="science">Science</option>
+      <option value="maths">Maths</option>
+      <option value="computer">Computer</option>
+      <option value="history">History</option>
+    </select>
+    <label>Subdomain</label>
+    <select id="subdomain">
+      <option value="general">General</option>
+    </select>
+    <label>Time per Question</label>
+    <select id="time">
+      <option value="10">10s</option>
+      <option value="15">15s</option>
+      <option value="20">20s</option>
+    </select>
+    <button onclick="startQuiz()">Start Quiz</button>
+  </div>
+  <div class="main">
+    <div class="circle-timer">
+      <svg width="70" height="70">
+        <circle class="circle-bg" cx="35" cy="35" r="45" stroke-width="6"/>
+        <circle class="circle-progress" cx="35" cy="35" r="45"/>
+      </svg>
+      <span id="timerText">0</span>
+    </div>
+    <div id="quizArea"></div>
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+  </div>
+</div>
+
+<audio id="tickSound" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA="></audio>
+<audio id="correctSound" src="data:audio/wav;base64,UklGRoQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQB///////8="></audio>
+<audio id="wrongSound" src="data:audio/wav;base64,UklGRhQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAD///8="></audio>
+
+<canvas id="confetti"></canvas>
+</body>
+</html>
